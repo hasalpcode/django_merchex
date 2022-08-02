@@ -1,0 +1,19 @@
+<html>
+    <head><title>Merchex</title></head>
+    <body>
+        <div>
+            <nav>
+                <a href="{% url 'band_list' %}">Groupes</a> &nbsp;
+                <a href="{% url 'add' %}">Créer un nouveau groupe</a>
+            </nav>
+        </div>
+        <h1>Hello Django !</h1>
+        <p>Mes groupes préférés sont :</p>
+        <!-- TODO : liste des groupes -->
+        <ul>
+            {% for band in bands %}
+             <li><a href="{% url 'band_detail' band.id %}">{{ band.name }}</a> - <a href="{% url 'band_update' band.id %}">[modifier]</a></li>
+            {% endfor %}
+           </ul>
+    </body>
+</html>
